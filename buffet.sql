@@ -71,3 +71,13 @@ CREATE TABLE cardapio(
 	preco MONEY NOT NULL,
 	CONSTRAINT PRK_cardapios PRIMARY KEY(id)
 );
+
+CREATE TABLE pedidos(
+	id INT IDENTITY NOT NULL,
+	id_atend INT NOT NULL,
+	id_cont INT NOT NULL,
+	dt_pedido DATETIME DEFAULT GETDATE(),
+	CONSTRAINT PRK_pedidos PRIMARY KEY(id),
+	CONSTRAINT FRK_PD_atent FOREIGN KEY (id_atend) REFERENCES atendimento(id_func),
+	CONSTRAINT FRK_PD_cont FOREIGN KEY (id_cont) REFERENCES contratantes(id)
+);
