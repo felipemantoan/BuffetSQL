@@ -81,3 +81,13 @@ CREATE TABLE pedidos(
 	CONSTRAINT FRK_PD_atent FOREIGN KEY (id_atend) REFERENCES atendimento(id_func),
 	CONSTRAINT FRK_PD_cont FOREIGN KEY (id_cont) REFERENCES contratantes(id)
 );
+
+CREATE TABLE itens_pedido(
+	id INT IDENTITY,
+	id_prato INT NOT NULL,
+	id_pedido INT NOT NULL,
+	qtde FLOAT NOT NULL,
+	CONSTRAINT PRK_itens_pedido PRIMARY KEY(id),
+	CONSTRAINT FRK_ITP_card	FOREIGN KEY (id_prato) REFERENCES cardapio(id),
+	CONSTRAINT FRK_ITP_ped FOREIGN KEY (id_pedido) REFERENCES pedidos(id)
+);
