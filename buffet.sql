@@ -48,3 +48,17 @@ CREATE TABLE funcionarios(
 	CONSTRAINT PRK_funcionarios PRIMARY KEY(id),
 	CONSTRAINT UNK_CPF_fun UNIQUE (cpf)
 );
+
+CREATE TABLE producao(
+	cargo VARCHAR(60) NOT NULL,
+	id_func INT NOT NULL,
+	CONSTRAINT FRK_prod_fun FOREIGN KEY (id_func) REFERENCES funcionarios(id),
+	CONSTRAINT PRK_producao PRIMARY KEY(id_func)
+);
+
+CREATE TABLE atendimento(
+	ramal numeric(5) NOT NULL,
+	id_func INT NOT NULL,
+	CONSTRAINT FRK_atend_fun FOREIGN KEY (id_func) REFERENCES funcionarios(id),
+	CONSTRAINT PRK_atendimento PRIMARY KEY(id_func)
+);
