@@ -4,3 +4,14 @@
 
 CREATE DATABASE buffet;
 USE buffet;
+
+CREATE TABLE contratantes(
+	id INT identity(1,1),
+	nome VARCHAR(100) NOT NULL,
+	telefone VARCHAR(14) NOT NULL, 
+	cep VARCHAR(11) NOT NULL,
+	cidade VARCHAR(60) NOT NULL,
+	bairro VARCHAR(80) NOT NULL,
+	endereco VARCHAR(100) NOT NULL,
+	CONSTRAINT PRK_contratantes PRIMARY KEY(id)
+);
