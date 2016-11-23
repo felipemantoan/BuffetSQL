@@ -1,5 +1,12 @@
 /*
 	23/11/2016
+	Máscaras padrão para:
+	
+	tel: (99)X9999-8888
+	cep: 12.345-678
+	rg: 11.111.111-1
+	cpf: 111.111.111-11
+	cnpj: 99.999.999/9999-99
 */
 
 CREATE DATABASE buffet;
