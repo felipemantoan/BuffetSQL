@@ -24,3 +24,12 @@ CREATE TABLE pessoa_fisica(
 	CONSTRAINT FRK_PF_cont FOREIGN KEY(id_cont) REFERENCES contratantes(id),
 	CONSTRAINT PRK_pessoa_fisica PRIMARY KEY(id_cont)
 );
+
+CREATE TABLE pessoa_juridica(
+	id_cont INT NOT NULL,
+	cnpj VARCHAR(18) NOT NULL,
+	razao_social VARCHAR(100) NOT NULL,
+	CONSTRAINT UNK_CNPJ_PJ UNIQUE(cnpj),
+	CONSTRAINT FRK_PJ_cont FOREIGN KEY(id_cont) REFERENCES contratantes(id),
+	CONSTRAINT PRK_pessoa_juridica PRIMARY KEY(id_cont)
+);
