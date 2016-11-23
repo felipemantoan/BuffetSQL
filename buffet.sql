@@ -62,3 +62,12 @@ CREATE TABLE atendimento(
 	CONSTRAINT FRK_atend_fun FOREIGN KEY (id_func) REFERENCES funcionarios(id),
 	CONSTRAINT PRK_atendimento PRIMARY KEY(id_func)
 );
+
+CREATE TABLE cardapio(
+	id INT IDENTITY NOT NULL,
+	prato VARCHAR(100) NOT NULL,
+	qtde FLOAT NOT NULL,
+	ingredientes text not null,
+	preco MONEY NOT NULL,
+	CONSTRAINT PRK_cardapios PRIMARY KEY(id)
+);
