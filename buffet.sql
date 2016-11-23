@@ -33,3 +33,18 @@ CREATE TABLE pessoa_juridica(
 	CONSTRAINT FRK_PJ_cont FOREIGN KEY(id_cont) REFERENCES contratantes(id),
 	CONSTRAINT PRK_pessoa_juridica PRIMARY KEY(id_cont)
 );
+
+CREATE TABLE funcionarios(
+	id INT IDENTITY NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	rg VARCHAR(12) NOT NULL,
+	cpf VARCHAR(14) NOT NULL,
+	telefone VARCHAR(14) NOT NULL,
+	endereco VARCHAR(100) NOT NULL,
+	bairro VARCHAR(80) NOT NULL,
+	cidade VARCHAR(60) NOT NULL,
+	salario MONEY NOT NULL,
+	dt_nasc DATE NOT NULL,
+	CONSTRAINT PRK_funcionarios PRIMARY KEY(id),
+	CONSTRAINT UNK_CPF_fun UNIQUE (cpf)
+);
