@@ -13,7 +13,7 @@ CREATE DATABASE buffet;
 USE buffet;
 
 CREATE TABLE contratantes(
-	id INT identity(1,1),
+	id INT identity,
 	nome VARCHAR(100) NOT NULL,
 	telefone VARCHAR(14) NOT NULL, 
 	cep VARCHAR(11) NOT NULL,
