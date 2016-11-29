@@ -1,8 +1,17 @@
 use buffet;
 
 --buscar todos os funcionários atendentes
-SELECT nome, ramal 
+SELECT nome as Atendente, ramal as Ramal 
 FROM funcionarios F, atendimento A WHERE F.id = a.id_func;
+
+--view
+CREATE VIEW VWpedidos AS SELECT p.id as [Nro. Pedido], c.nome as Cliente, f.nome as Atendente, dt_pedido as Data
+FROM pedidos p, contratantes c, funcionarios f 
+WHERE c.id = p.id_cont AND p.id_atend = f.id;
+
+
+SELECT * FROM VWpedidos;
+
 
 --Obter de pedidos por atentende
 SELECT p.id as Pedido, c.nome as [Cliente], p.dt_pedido as [ Data do Pedido] 
@@ -22,6 +31,8 @@ FROM itens_pedido it, pedidos p, cardapio c
 WHERE it.id_pedido = 1 and p.id = it.id_pedido and c.id = it.id_prato;
 
 --valor do pedido
-SELECT p.id as [Pedido], SUM(c.preco) as [Valor]
+CREATE VIEW VW_total as SELECT p.id as [Pedido], SUM(c.preco) as [Valor]
 FROM itens_pedido it, pedidos p, cardapio c 
-WHERE it.id_pedido = 1 and p.id = it.id_pedido and c.id = it.id_prato GROUP BY p.id;
+WHERE p.id = it.id_pedido and c.id = it.id_prato GROUP BY p.id;
+
+select * from VW_total;
