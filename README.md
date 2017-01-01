@@ -20,4 +20,4 @@ FATEC MOGI MIRIM - Faculdade de Tecnologia Arthur Azevedo
 
 ## Requisitos Mínimos:
 
-Microsoft Windows Server 2014
+Microsoft SQL Server 2014
